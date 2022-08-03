@@ -1,0 +1,39 @@
+@mixin explanationNavList {
+  width: 20%;
+  padding: 5% 0;
+  border-right: 5px solid;
+}
+
+@mixin footerNavigation {
+  width: 20%;
+  border-right: 2px solid goldenrod;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms;
+  &:active {
+    transform: translateY(2%);
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+  }
+}
+@mixin footerMenuText {
+  margin-top: 0.2%;
+  position: absolute;
+  top: 70%;
+  color: #ffffff;
+}
+@mixin textShadowColor($textShadowColor) {
+  text-shadow: $textShadowColor 1px 0px 1px, $textShadowColor -1px 0px 1px,
+    $textShadowColor 0px -1px 1px, $textShadowColor -1px 0px 1px,
+    $textShadowColor 1px 1px 1px, $textShadowColor -1px 1px 1px,
+    $textShadowColor 1px -1px 1px, $textShadowColor -1px -1px 1px,
+    $textShadowColor 1px 1px 1px, $textShadowColor -1px 1px 1px;
+}
+@mixin gradientColor($direction, $colorFirst, $colorSecond) {
+  background-image: linear-gradient($direction, $colorFirst, $colorSecond);
+}
+
+@mixin boxShadowColor($boxShadowColor) {
+  box-shadow: 0px 0px $boxShadowColor;
+}

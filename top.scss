@@ -1,0 +1,258 @@
+@import "mixin";
+@import "header";
+@import "footer";
+
+html {
+  overflow-y: scroll; // スクロールでhederとfooterの下をすり抜け
+  font-style: italic;
+}
+body {
+  background-color: #000;
+  object-fit: contain;
+}
+//セレクトボックス
+select {
+  width: 50%;
+  height: 42px;
+  text-align: center;
+  margin: 9% 0 6% 0;
+  outline: none;
+  border: skyblue 2px inset;
+  @include boxShadowColor(12px);
+  cursor: pointer;
+}
+.top__container {
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/apl_main_bg.jpg"); //アプリケーションの背景画像
+  background-size: cover;
+  min-height: 100vh;
+  &::before {
+    //オープニングアニメーション
+    content: "Richer";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/loading.jpg");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    font-size: small;
+    color: #ffffff;
+    text-decoration: double underline;
+    text-decoration-skip-ink: none;
+    @include textShadowColor(#03a9f4);
+    animation-name: openingTopAnime;
+    animation-duration: 5000ms;
+    animation-fill-mode: forwards;
+    transition: all 10ms ease;
+
+    @keyframes openingTopAnime {
+      from {
+        z-index: 3;
+      }
+      20% {
+        opacity: 1;
+        font-size: 80px;
+        text-shadow: 4px 0px 0px rebeccapurple;
+        color: rgba(255, 255, 255, 0.583);
+      }
+      40% {
+        opacity: 1;
+        font-size: 80px;
+        color: rgba(216, 112, 147, 0.95);
+      }
+      60% {
+        opacity: 1;
+        font-size: 80px;
+      }
+      80% {
+        opacity: 0.5;
+      }
+      to {
+        display: none;
+        z-index: -3;
+      }
+    }
+  }
+
+  &__headerSpace {
+    //headerぶんの隙間埋めてる
+    width: 100%;
+    padding: 40px;
+  }
+  &__footerSpace {
+    //footerぶんの隙間埋めてる
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+// caption s
+.greeting {
+  width: 157px;
+  animation-name: greetingUser;
+  animation-duration: 4000ms;
+  animation-fill-mode: forwards;
+  color: goldenrod;
+  @include textShadowColor(#765151);
+  &__text {
+    color: #ffffff;
+  }
+  &::after {
+    content: "さん";
+    color: #ffffff;
+  }
+}
+@keyframes greetingUser {
+  from {
+    margin: 0%;
+    opacity: 0;
+  }
+  to {
+    margin: 2% 0 0 2%;
+    opacity: 1;
+  }
+}
+// caption e
+.siteMain {
+  width: 100%;
+  margin: 5% auto;
+
+  // explanation s
+  &__explanation {
+    width: 95%;
+    margin: 5% auto;
+    background-color: rgba(255, 255, 255, 0.25);
+    @include boxShadowColor(15px);
+    background-size: cover;
+    border: #000 solid 1px;
+    align-items: center;
+    text-align: center;
+    padding: 3%;
+
+    &__text {
+      width: 80%;
+      margin: 5% auto;
+      padding: 1% 0;
+      letter-spacing: 2px;
+      background-color: rgb(21, 48, 202);
+      border: goldenrod solid 2px;
+      color: rgba(255, 0, 0, 0.874);
+      @include textShadowColor(goldenrod);
+      &::before {
+        content: "↓";
+        animation: 3s ease-in 1s infinite flashingDownDrrow;
+      }
+      &::after {
+        content: "↓";
+        animation: 3s ease-in 1s infinite flashingDownDrrow;
+      }
+      @keyframes flashingDownDrrow {
+        from {
+          opacity: 0;
+          color: plum;
+        }
+        50% {
+          opacity: 1;
+          color: olive;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    }
+
+    &__imagePosition {
+      width: 80%;
+      height: 100%;
+      background-image: url("assets/apl_main_bg.jpg"); //アプリケーションの背景画像
+      margin: auto;
+      @include boxShadowColor(10px);
+      transition: all 1000ms ease-in-out;
+    }
+  }
+  // explanation e
+
+  // introduction s
+  &__introduction {
+    width: 95%;
+    margin: 0% auto;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: solid 1px #000;
+    @include boxShadowColor(12px);
+    &__container {
+      margin: 0 auto;
+      padding: 2%;
+      text-align: left;
+      font-weight: bold;
+    }
+    &__text {
+      color: #000;
+      font-size: x-small;
+      font-weight: bold;
+      &:nth-child(1) {
+        text-decoration: none;
+        color: indigo;
+        text-align: center;
+        font-size: medium;
+        margin: 3% 0%;
+        @include textShadowColor(goldenrod);
+      }
+      &:nth-child(2) {
+        text-align: center;
+      }
+      &:nth-child(3) {
+        text-align: center;
+        margin-bottom: 2%;
+      }
+      &:nth-child(4) {
+        margin-bottom: 2%;
+        color: red;
+        text-align: center;
+      }
+      &:nth-child(5) {
+        text-align: center;
+        margin-bottom: 5%;
+        color: red;
+        text-decoration: underline 1px red;
+      }
+      &:nth-child(6) {
+        color: brown;
+      }
+      &:nth-child(7) {
+        color: brown;
+      }
+      &:nth-child(8) {
+        color: brown;
+      }
+      &:nth-child(9) {
+        color: brown;
+      }
+      &:nth-child(10) {
+        color: brown;
+      }
+      &:nth-child(11) {
+        color: brown;
+      }
+      &:nth-child(12) {
+        color: brown;
+      }
+      &:nth-child(13) {
+        margin-bottom: 3%;
+        color: brown;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .siteMain__introduction__text {
+    font-size: large;
+  }
+  .siteMain__explanation__text {
+    padding: 3% 0%;
+  }
+}

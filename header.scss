@@ -1,0 +1,81 @@
+@import "mixin";
+
+.header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  outline: 2px solid goldenrod;
+  overflow: hidden;
+  list-style: none;
+  z-index: 1;
+  @include boxShadowColor(12px);
+  &__logo {
+    width: 75%;
+    display: grid;
+    @include gradientColor(45deg, #72e4cb, #d841d88d);
+    align-items: center; //上下中央寄せ
+    border-right: 2px solid goldenrod;
+    &__title {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      padding: 0.6% 5% 0.6% 4%;
+      top: 25%;
+      left: 18%;
+      font-weight: bold;
+      transform: rotate(-2.5deg);
+      animation-name: headerLogoTitleAnime;
+      animation-duration: 5000ms;
+      animation-fill-mode: forwards;
+      transition: all 0ms ease;
+      @keyframes headerLogoTitleAnime {
+        from {
+          color: rgba(216, 112, 147, 0.95);
+        }
+        to {
+          color: #ffffff;
+          text-shadow: 4px 0px 0px rebeccapurple;
+        }
+      }
+    }
+  }
+  &__navProfile {
+    width: 25%;
+    background-color: #7d7aa3b5;
+    transition: all 200ms;
+    &:active {
+      background-color: #ffffff;
+    }
+    &__icon {
+      position: absolute;
+      transform: scale(4.5);
+      top: 74.15%;
+      right: 10%;
+      bottom: 0%;
+      color: aliceblue;
+      width: 14px;
+      height: 6px;
+      border-left: solid 1px;
+      border-right: solid 1px;
+      border-top: solid 1px;
+      border-bottom: solid 1px transparent;
+      background-color: currentColor;
+      border-radius: 6px 6px 0 0;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 15%;
+        bottom: 115%;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: solid 1px;
+        background-color: currentColor;
+      }
+    }
+  }
+}

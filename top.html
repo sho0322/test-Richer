@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="- 生活を豊かに -" />
+    <link rel="stylesheet" href="top.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="mixin.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="top.js"></script>
+    <title>Richer</title>
+  </head>
+  <body>
+    <section name="top__container as topWrapper" class="top__container">
+      <!-- header s -->
+      <div class="top__container__headerSpace"></div>
+      <section name="header">
+        <ul class="header">
+          <li class="header__logo">
+            <a href="top.html">
+              <h1 class="header__logo__title">Richer</h1>
+            </a>
+          </li>
+          <li class="header__navProfile">
+            <span class="header__navProfile__icon"></span>
+          </li>
+        </ul>
+      </section>
+      <!-- header e -->
+
+      <!-- (挨拶) + $userさん ↓ -->
+      <h5 class="greeting">
+        <span id="greetingText" class="greeting__text"></span>
+        福井沙矢
+      </h5>
+      <!-- (挨拶) + $userさん ↑ -->
+
+      <section class="siteMain">
+        <section name="explanation" class="siteMain__explanation">
+          <h4 class="siteMain__explanation__text">このアプリの使い方</h4>
+          <img
+            id="changeImage"
+            class="siteMain__explanation__imagePosition"
+            src="https://www.evernote.com/l/AOJvwDeLIhtAE4B8mglnnHc4TQ0y2p18xGYB/image.jpg"
+            alt="このアプリの使い方"
+          />
+          <select name="selectExplanation" id="explanationList">
+            <option value="noselectDefault"></option>
+            <option value="selectTimeline"></option>
+            <option value="selectSchedule"></option>
+            <option value="selectSearch"></option>
+            <option value="selectNotification"></option>
+            <option value="selectContact"></option>
+          </select>
+        </section>
+        <section name="introduction" class="siteMain__introduction">
+          <div class="siteMain__introduction__container">
+            <p class="siteMain__introduction__text">
+              Richerをご利用頂きありがとうございます。
+            </p>
+            <p class="siteMain__introduction__text">
+              このアプリはタイムラインやスケジュールの管理など、
+            </p>
+
+            <p class="siteMain__introduction__text">
+              あなたの人生がより豊かになるようなサービスを提供します。
+            </p>
+            <p class="siteMain__introduction__text">※ 禁止事項</p>
+
+            <p class="siteMain__introduction__text">
+              下記の行為に対し、運営側は一切責任を取りません。
+            </p>
+            <p class="siteMain__introduction__text">
+              (1)登録情報によって本サービスの利用があった場合、利用登録をおこなった本人が利用したものと扱うことができ、当該利用によって生じた結果ならびにそれに伴う一切の責任については、利用登録を行った本人に帰属するものとします。
+            </p>
+            <p class="siteMain__introduction__text">
+              (2)利用者は、利用に際して登録した情報（以下、「登録情報」といいます。メールアドレスやID・パスワード等を含みます）について、自己の責任の下、任意に登録、管理するものとします。利用者は、これを第三者に利用させ、または貸与、譲渡、名義変更、売買などをしてはならないものとします。
+            </p>
+            <p class="siteMain__introduction__text">
+              (3)不法、有害、脅迫、虐待、人種差別、中傷、名誉棄損、侮辱、ハラスメント、扇動、不快を与えることを意図し、もしくはそのような結果を生じさせる恐れのある内容をもつ情報
+            </p>
+            <p class="siteMain__introduction__text">
+              (4)個人情報の漏洩や第三者の著作権を含む知的財産権、その他の財産権を侵害、公共の利益または個人の権利を侵害する情報を扱う発言やトラブル。
+            </p>
+            <p class="siteMain__introduction__text">
+              (5)運営側への攻撃的な行為に対しては法的手段をとらせて頂きますのでお控えください。
+            </p>
+            <p class="siteMain__introduction__text">
+              (6)犯罪や不法行為、危険行為に属する情報およびそれらを教唆、幇助する情報の扱い。
+            </p>
+            <p class="siteMain__introduction__text">
+              (7)猥褻、児童ポルノまたは児童虐待にあたる画像、文書等の情報の扱い。
+            </p>
+            <p class="siteMain__introduction__text">
+              (8)その他運営側が不適切と判断する情報。
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <!-- footer s -->
+      <div class="top__container__footerSpace"></div>
+      <section name="footer">
+        <ul class="footer">
+          <li class="footer__navTimeline">
+            <span class="footer__navTimeline__icon"></span>
+            <h6 class="footer__navTimeline__text">投稿</h6>
+          </li>
+          <li class="footer__navSchedule">
+            <span class="footer__navSchedule__icon"></span>
+            <h6 class="footer__navSchedule__text">予定</h6>
+          </li>
+          <li class="footer__navSearch">
+            <span class="footer__navSearch__icon"></span>
+            <h6 class="footer__navSearch__text">検索</h6>
+          </li>
+          <li class="footer__navNotification">
+            <span class="footer__navNotification__icon"></span>
+            <h6 class="footer__navNotification__text">通知</h6>
+          </li>
+          <li class="footer__navContact">
+            <span class="footer__navContact__icon"></span>
+            <h6 class="footer__navContact__text">連絡</h6>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <!-- footer e -->
+  </body>
+</html>
