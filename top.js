@@ -29,13 +29,11 @@ addEventListener("load", function () {
     }
     // セレクトボックス内のメニュー
     var MENU_LIST = ["選択", "投稿", "予定", "検索", "通知", "連絡"];
-    var optionIndex = 0;
     var getOption = document.querySelectorAll("option");
     var optionList = Object(getOption).length;
     var explanationList = document.querySelector("#explanationList");
-    while (optionIndex < optionList) {
-        getOption[optionIndex].innerHTML = MENU_LIST[optionIndex];
-        optionIndex++;
+    for (var i = 0; i < optionList; i++) {
+        Object(getOption[i]).innerHTML = MENU_LIST[i];
     }
     // 画像URL
     var SELECT_IMAGES = {
@@ -75,7 +73,7 @@ addEventListener("load", function () {
     });
     // 画像プレビュー表示用の処理。(セレクトボックスの色も変わる)
     try {
-        changeImage.addEventListener("click", function () {
+        changeImage === null || changeImage === void 0 ? void 0 : changeImage.addEventListener("click", function () {
             setTimeout(function () {
                 changeImage.setAttribute("style", "-webkit-transform:scale(1.4) rotate(360deg)");
                 explanationList.setAttribute("style", "background-color: goldenrod; color: white;");
@@ -89,5 +87,28 @@ addEventListener("load", function () {
     catch (e) {
         alert("ページを再読み込みしてください。");
     }
-    console.log(Object(changeImage).src);
+    //ページ遷移(URLと)
+    var NAVIGATIONN_LIST = [];
+    var pageNavigation = document.querySelector("#footer");
+    var pageNavigationChildren = Object(pageNavigation).children;
+    for (var i = 0; i < pageNavigationChildren.length; i++) {
+        Object(NAVIGATIONN_LIST).push(pageNavigationChildren[i]);
+    }
+    var PAGE_URL = [
+        "/timeline.html",
+        "/schedule.html",
+        "/search.html",
+        "/notification.html",
+        "/contact.html",
+    ];
+    var _loop_1 = function (i) {
+        Object(NAVIGATIONN_LIST[i]).addEventListener("click", function () {
+            setTimeout(function () {
+                location.href = PAGE_URL[i];
+            }, 280);
+        });
+    };
+    for (var i = 0; i < PAGE_URL.length; i++) {
+        _loop_1(i);
+    }
 });

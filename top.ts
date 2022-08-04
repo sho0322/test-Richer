@@ -34,14 +34,12 @@ addEventListener("load", () => {
   // セレクトボックス内のメニュー
 
   const MENU_LIST: string[] = ["選択", "投稿", "予定", "検索", "通知", "連絡"];
-  let optionIndex = 0;
   const getOption = document.querySelectorAll("option");
   const optionList = Object(getOption).length;
   const explanationList = document.querySelector("#explanationList");
 
-  while (optionIndex < optionList) {
-    getOption[optionIndex].innerHTML = MENU_LIST[optionIndex];
-    optionIndex++;
+  for (let i = 0; i < optionList; i++) {
+    Object(getOption[i]).innerHTML = MENU_LIST[i];
   }
   // 画像URL
 
@@ -95,7 +93,7 @@ addEventListener("load", () => {
 
   // 画像プレビュー表示用の処理。(セレクトボックスの色も変わる)
   try {
-    changeImage!.addEventListener("click", () => {
+    changeImage?.addEventListener("click", () => {
       setTimeout(() => {
         changeImage!.setAttribute(
           "style",
@@ -120,5 +118,26 @@ addEventListener("load", () => {
   } catch (e) {
     alert("ページを再読み込みしてください。");
   }
-  console.log(Object(changeImage).src);
+  //ページ遷移(URLとfooterメニューを紐付ける)
+  let NAVIGATIONN_LIST: never[] = [];
+  const pageNavigation = document.querySelector("#footer");
+  const pageNavigationChildren = Object(pageNavigation).children;
+  for (let i = 0; i < pageNavigationChildren.length; i++) {
+    Object(NAVIGATIONN_LIST).push(pageNavigationChildren[i]);
+  }
+
+  const PAGE_URL: string[] = [
+    "/timeline.html",
+    "/schedule.html",
+    "/search.html",
+    "/notification.html",
+    "/contact.html",
+  ];
+  for (let i = 0; i < PAGE_URL.length; i++) {
+    Object(NAVIGATIONN_LIST[i]).addEventListener("click", () => {
+      setTimeout(() => {
+        location.href = PAGE_URL[i];
+      }, 280);
+    });
+  }
 });

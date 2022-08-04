@@ -738,10 +738,12 @@ select {
 
 .siteMain__introduction__text:nth-child(2) {
   text-align: center;
+  font-size: smaller;
 }
 
 .siteMain__introduction__text:nth-child(3) {
   text-align: center;
+  font-size: smaller;
   margin-bottom: 2%;
 }
 
