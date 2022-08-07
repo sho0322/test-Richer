@@ -1,38 +1,36 @@
 addEventListener("load", function () {
     // 時間によって挨拶の種類を変更する処理。
-    var Greeting = /** @class */ (function () {
-        function Greeting(message) {
-            this.greeting = message;
-        }
-        Greeting.prototype.greetingMessages = function () {
-            return this.greeting;
-        };
-        return Greeting;
-    }());
+    var getGreetingText = document.querySelector("#greetingText");
+    var GREETING_TYPE = [
+        "おはようございます",
+        "こんにちは",
+        "こんばんは",
+    ];
+    var MORNING = GREETING_TYPE[0], AFTERNOON = GREETING_TYPE[1], EVENING = GREETING_TYPE[2];
     var now = new Date();
     var hour = now.getHours();
-    var morning = new Greeting("おはよう");
-    var afternoon = new Greeting("こんにちは");
-    var evening = new Greeting("こんばんは");
-    var goodMorning = morning.greetingMessages();
-    var goodAfternoon = afternoon.greetingMessages();
-    var goodEvening = evening.greetingMessages();
-    var getGreetingText = document.querySelector("#greetingText");
     if (hour >= 4 && hour <= 10) {
-        getGreetingText.innerHTML = goodMorning;
+        getGreetingText.innerHTML = MORNING;
     }
     else if (hour >= 11 && hour <= 17) {
-        getGreetingText.innerHTML = goodAfternoon;
+        getGreetingText.innerHTML = AFTERNOON;
     }
     else if (hour >= 18 || hour <= 3) {
-        getGreetingText.innerHTML = goodEvening;
+        getGreetingText.innerHTML = EVENING;
     }
     // セレクトボックス内のメニュー
-    var MENU_LIST = ["選択", "投稿", "予定", "検索", "通知", "連絡"];
+    var MENU_LIST = [
+        "選択",
+        "投稿",
+        "予定",
+        "検索",
+        "通知",
+        "連絡",
+    ];
     var getOption = document.querySelectorAll("option");
-    var optionList = Object(getOption).length;
+    var OPTION_LIST = Object(getOption).length;
     var explanationList = document.querySelector("#explanationList");
-    for (var i = 0; i < optionList; i++) {
+    for (var i = 0; i < OPTION_LIST; i++) {
         Object(getOption[i]).innerHTML = MENU_LIST[i];
     }
     // 画像URL

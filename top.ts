@@ -1,12 +1,16 @@
 addEventListener("load", () => {
   // 時間によって挨拶の種類を変更する処理。
+  const getGreetingText = document.querySelector("#greetingText");
 
-  const GREETING_TYPE = ["おはよう", "こんにちは", "こんばんは"];
+  const GREETING_TYPE: readonly string[] = [
+    "おはようございます",
+    "こんにちは",
+    "こんばんは",
+  ];
   const [MORNING, AFTERNOON, EVENING] = GREETING_TYPE;
 
   const now = new Date();
   const hour: number = now.getHours();
-  const getGreetingText = document.querySelector("#greetingText");
 
   if (hour >= 4 && hour <= 10) {
     getGreetingText!.innerHTML = MORNING;
@@ -15,15 +19,21 @@ addEventListener("load", () => {
   } else if (hour >= 18 || hour <= 3) {
     getGreetingText!.innerHTML = EVENING;
   }
-
   // セレクトボックス内のメニュー
 
-  const MENU_LIST: string[] = ["選択", "投稿", "予定", "検索", "通知", "連絡"];
+  const MENU_LIST: readonly string[] = [
+    "選択",
+    "投稿",
+    "予定",
+    "検索",
+    "通知",
+    "連絡",
+  ];
   const getOption = document.querySelectorAll("option");
-  const optionList = Object(getOption).length;
+  const OPTION_LIST = Object(getOption).length;
   const explanationList = document.querySelector("#explanationList");
 
-  for (let i = 0; i < optionList; i++) {
+  for (let i = 0; i < OPTION_LIST; i++) {
     Object(getOption[i]).innerHTML = MENU_LIST[i];
   }
   // 画像URL
@@ -111,7 +121,7 @@ addEventListener("load", () => {
     Object(NAVIGATIONN_LIST).push(pageNavigationChildren[i]);
   }
 
-  const PAGE_URL: string[] = [
+  const PAGE_URL: readonly string[] = [
     "/timeline.html",
     "/schedule.html",
     "/search.html",
