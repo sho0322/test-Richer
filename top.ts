@@ -1,34 +1,19 @@
 addEventListener("load", () => {
   // 時間によって挨拶の種類を変更する処理。
 
-  class Greeting {
-    readonly greeting: string;
-
-    public constructor(message: string) {
-      this.greeting = message;
-    }
-
-    public greetingMessages() {
-      return this.greeting;
-    }
-  }
+  const GREETING_TYPE = ["おはよう", "こんにちは", "こんばんは"];
+  const [MORNING, AFTERNOON, EVENING] = GREETING_TYPE;
 
   const now = new Date();
   const hour: number = now.getHours();
-  const morning: Greeting = new Greeting("おはよう");
-  const afternoon: Greeting = new Greeting("こんにちは");
-  const evening: Greeting = new Greeting("こんばんは");
-  const goodMorning = morning.greetingMessages();
-  const goodAfternoon = afternoon.greetingMessages();
-  const goodEvening = evening.greetingMessages();
   const getGreetingText = document.querySelector("#greetingText");
 
   if (hour >= 4 && hour <= 10) {
-    getGreetingText!.innerHTML = goodMorning;
+    getGreetingText!.innerHTML = MORNING;
   } else if (hour >= 11 && hour <= 17) {
-    getGreetingText!.innerHTML = goodAfternoon;
+    getGreetingText!.innerHTML = AFTERNOON;
   } else if (hour >= 18 || hour <= 3) {
-    getGreetingText!.innerHTML = goodEvening;
+    getGreetingText!.innerHTML = EVENING;
   }
 
   // セレクトボックス内のメニュー
