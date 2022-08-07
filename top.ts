@@ -133,7 +133,8 @@ addEventListener("load", () => {
     "/notification.html",
     "/contact.html",
   ];
-  for (let i = 0; i < PAGE_URL.length; i++) {
+  const PAGE_URL_LIST = PAGE_URL.length;
+  for (let i = 0; i < PAGE_URL_LIST; i++) {
     Object(NAVIGATIONN_LIST[i]).addEventListener("click", () => {
       setTimeout(() => {
         location.href = PAGE_URL[i];

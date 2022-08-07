@@ -87,7 +87,7 @@ addEventListener("load", function () {
     catch (e) {
         alert("ページを再読み込みしてください。");
     }
-    //ページ遷移(URLと)
+    //ページ遷移(URLとfooterメニューを紐付ける)
     var NAVIGATIONN_LIST = [];
     var pageNavigation = document.querySelector("#footer");
     var pageNavigationChildren = Object(pageNavigation).children;
@@ -101,6 +101,7 @@ addEventListener("load", function () {
         "/notification.html",
         "/contact.html",
     ];
+    var PAGE_URL_LIST = PAGE_URL.length;
     var _loop_1 = function (i) {
         Object(NAVIGATIONN_LIST[i]).addEventListener("click", function () {
             setTimeout(function () {
@@ -108,7 +109,7 @@ addEventListener("load", function () {
             }, 280);
         });
     };
-    for (var i = 0; i < PAGE_URL.length; i++) {
+    for (var i = 0; i < PAGE_URL_LIST; i++) {
         _loop_1(i);
     }
 });
