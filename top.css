@@ -451,11 +451,14 @@
 }
 
 html {
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   font-style: italic;
 }
 
 body {
+  width: 100%;
   background-color: #000;
   -o-object-fit: contain;
      object-fit: contain;
@@ -476,9 +479,9 @@ select {
 .top__container {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   background-image: url("assets/apl_main_bg.jpg");
   background-size: cover;
-  min-height: 100vh;
 }
 
 .top__container::before {
@@ -535,10 +538,11 @@ select {
   }
   80% {
     opacity: 0.5;
+    z-index: -3;
   }
   to {
+    opacity: 0;
     display: none;
-    z-index: -3;
   }
 }
 
@@ -563,10 +567,11 @@ select {
   }
   80% {
     opacity: 0.5;
+    z-index: -3;
   }
   to {
+    opacity: 0;
     display: none;
-    z-index: -3;
   }
 }
 

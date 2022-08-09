@@ -10,7 +10,7 @@ addEventListener("load", () => {
   const PAGE_URL: readonly string[] = [
     "/timeline.html",
     "/schedule.html",
-    "/search.html",
+    "/search/pre.html",
     "/notification.html",
     "/contact.html",
   ];

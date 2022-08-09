@@ -9,7 +9,7 @@ addEventListener("load", function () {
     var PAGE_URL = [
         "/timeline.html",
         "/schedule.html",
-        "/search.html",
+        "/search/pre.html",
         "/notification.html",
         "/contact.html",
     ];

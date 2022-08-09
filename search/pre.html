@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/header.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/mixin.css" />
+    <link rel="stylesheet" href="/search.css" />
+    <link rel="shortcut icon" href="/favicon.icon" />
+    <script src="/search.js"></script>
+    <script src="/footer.js"></script>
+    <title>Richer search/pre</title>
+  </head>
+  <body>
+    <!-- header s -->
+    <section name="search__container as topWrapper" class="search__container">
+      <div class="search__container__headerSpace"></div>
+      <section name="header">
+        <ul class="header">
+          <li class="header__logo">
+            <a href="/top.html">
+              <h1 class="header__logo__title">Richer</h1>
+            </a>
+          </li>
+          <li class="header__navProfile">
+            <span class="header__navProfile__icon"></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- header e -->
+      <section class="siteMain">
+        <p class="siteMain__text">サイト内検索</p>
+        <input
+          type="tel"
+          id="inWriteTextField"
+          class="siteMain__searchText"
+          placeholder="検索ワードを入力してください。"
+          maxlength="20"
+          value=""
+        />
+        <input
+          type="submit"
+          name="btn"
+          id="searchInputValue"
+          class="siteMain__searchTextInput"
+          value="検索"
+        />
+        <h1>
+          <a
+            href="http://www.google.co.jp/search"
+            class="siteMain__googleSearch"
+            target="_blank"
+            >ググる!!
+          </a>
+        </h1>
+        <p class="siteMain__googleSearch__push">PUSH</p>
+      </section>
+      <!-- footer s -->
+      <div class="top__container__footerSpace"></div>
+      <section name="footer">
+        <ul id="footer" class="footer">
+          <li class="footer__navTimeline">
+            <span class="footer__navTimeline__icon"></span>
+            <h6 class="footer__navTimeline__text">投稿</h6>
+          </li>
+          <li class="footer__navSchedule">
+            <span class="footer__navSchedule__icon"></span>
+            <h6 class="footer__navSchedule__text">予定</h6>
+          </li>
+          <li class="footer__navSearch">
+            <span class="footer__navSearch__icon"></span>
+            <h6 class="footer__navSearch__text">検索</h6>
+          </li>
+          <li class="footer__navNotification">
+            <span class="footer__navNotification__icon"></span>
+            <h6 class="footer__navNotification__text">通知</h6>
+          </li>
+          <li class="footer__navContact">
+            <span class="footer__navContact__icon"></span>
+            <h6 class="footer__navContact__text">連絡</h6>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <!-- footer e -->
+  </body>
+</html>
