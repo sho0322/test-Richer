@@ -538,11 +538,11 @@ select {
   }
   80% {
     opacity: 0.5;
-    z-index: -3;
   }
   to {
     opacity: 0;
     display: none;
+    z-index: -3;
   }
 }
 
@@ -567,11 +567,11 @@ select {
   }
   80% {
     opacity: 0.5;
-    z-index: -3;
   }
   to {
     opacity: 0;
     display: none;
+    z-index: -3;
   }
 }
 
