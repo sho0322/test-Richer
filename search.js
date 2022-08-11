@@ -1,20 +1,15 @@
 addEventListener("load", function () {
-    var isWriteTextField = document.querySelector("#inWriteTextField");
-    var isTextValueInputField = document.querySelector("#searchInputValue");
-    isWriteTextField === null || isWriteTextField === void 0 ? void 0 : isWriteTextField.addEventListener("click", function () {
-        setTimeout(function () {
-            isWriteTextField.setAttribute("style", "background-color: rgba(255, 255, 255, 0.25)");
-        }, 100);
-    });
-    isTextValueInputField === null || isTextValueInputField === void 0 ? void 0 : isTextValueInputField.addEventListener("click", function () {
-        if (Object(isWriteTextField).value.match(/\S/g)) {
-            setTimeout(function () {
-                isTextValueInputField.setAttribute("style", "transform: scale(0);");
-            }, 100);
+    var isSearchAction = document.querySelector("#isSearchAction");
+    var isSearchText = document.querySelector("#isSearchText");
+    var isSearchInput = document.querySelector("#isSearchInput");
+    isSearchInput === null || isSearchInput === void 0 ? void 0 : isSearchInput.addEventListener("click", function () {
+        if (Object(isSearchText).value.match(/\S/g)) {
+            Object(isSearchInput).innerHTML = "";
+            Object(isSearchText).setAttribute("style", "background-color: orange;");
+            Object(isSearchAction).setAttribute("action", "http://www.google.co.jp/search");
         }
         else {
             alert("検索ワードを入力してください。\n ※ 半角スペースや、全角スペースのみの検索はできません。");
-            isWriteTextField.setAttribute("style", "background-color: #ffff");
         }
     });
 });

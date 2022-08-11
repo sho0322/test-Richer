@@ -33,31 +33,26 @@
 
       <!-- header e -->
       <section class="siteMain">
-        <p class="siteMain__text">サイト内検索</p>
-        <input
-          type="tel"
-          id="inWriteTextField"
-          class="siteMain__searchText"
-          placeholder="検索ワードを入力してください。"
-          maxlength="20"
-          value=""
-        />
-        <input
-          type="submit"
-          name="btn"
-          id="searchInputValue"
-          class="siteMain__searchTextInput"
-          value="検索"
-        />
-        <h1>
-          <a
-            href="http://www.google.co.jp/search"
-            class="siteMain__googleSearch"
-            target="_blank"
-            >ググる!!
-          </a>
-        </h1>
-        <p class="siteMain__googleSearch__push">PUSH</p>
+        <form method="get" id="isSearchAction">
+          <p class="siteMain__text">ググる!!!</p>
+          <input
+            type="tel"
+            id="isSearchText"
+            class="siteMain__searchText"
+            name="q"
+            placeholder="検索ワードを入力してください。"
+            maxlength="20"
+            value=""
+          />
+          <input
+            type="submit"
+            name="btng"
+            id="isSearchInput"
+            class="siteMain__searchTextInput"
+            value="検索"
+          />
+          <input type="hidden" name="hl" value="ja" />
+        </form>
       </section>
       <!-- footer s -->
       <div class="top__container__footerSpace"></div>
